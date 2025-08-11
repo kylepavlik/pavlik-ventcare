@@ -2,34 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Pavlik Ventcare | Dryer Vent Cleaning in Yukon • Mustang • SW OKC</title>
   <meta name="description" content="Veteran-owned dryer vent cleaning in Yukon, Mustang & SW OKC. Wall vent $80 • Roof vent $120 • Transition piece $45. Military & First Responder 10% OFF. Book online or call/text 309-712-4829." />
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
   <style>
-    :root { --bg:#f4f5f7; --surface:#ffffff; --ink:#1e2a37; --muted:#5a6a7a; --accent:#1f4b6e; --highlight:#e59a2f; --radius:16px; --shadow:0 10px 25px rgba(0,0,0,.08); }
-    body{margin:0;font-family:system-ui,Segoe UI,Roboto;background:var(--bg);color:var(--ink);}
-    .container{width:min(1100px,92vw);margin:0 auto}
-    header{background:#fff;border-bottom:1px solid #ddd;padding:.8rem 0}
-    .nav{display:flex;align-items:center;justify-content:space-between}
-    .brand{font-weight:800;display:flex;align-items:center;gap:.5rem}
-    .badge{background:#fff;border:1px solid #ddd;padding:.3rem .6rem;border-radius:999px;font-size:.85rem;font-weight:700;color:var(--accent)}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:2rem 0}
-    .hero h1{margin:0;font-size:2rem}
-    .tagline{color:var(--muted);margin:.3rem 0 1rem}
-    .cta-row{display:flex;gap:.75rem;flex-wrap:wrap}
-    .btn{padding:.9rem 1.2rem;border-radius:12px;font-weight:800;text-decoration:none;display:inline-block}
-    .callbtn{background:var(--accent);color:#fff}
-    .textbtn{background:#fff;border:1px solid #ccc;color:var(--accent)}
-    .bookbtn{background:var(--highlight);color:#222}
-    .card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem}
-    .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.85rem}
-    .price{border:1px dashed #ccc;border-radius:14px;padding:.9rem 1rem;text-align:center}
-    .price h3{margin:0;font-size:1.05rem;font-weight:800}
-    .price .amt{color:var(--accent);font-weight:900;font-size:1.15rem}
-    .deal{background:#fff4df;border:1px solid #f2d6a5;border-radius:999px;padding:.6rem .8rem;display:inline-block;margin-top:1rem;font-weight:800}
-    footer{text-align:center;color:var(--muted);font-size:.9rem;margin:2rem 0}
-    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+    :root{
+      --bg:#f7f8fa; --card:#ffffff; --ink:#1c2530; --muted:#5b6b7b;
+      --accent:#1f4b6e; --accent-ink:#ffffff; --highlight:#f2b24a; --radius:16px;
+      --shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica Neue,Arial}
+    a{text-decoration:none;color:inherit}
+
+    /* Layout */
+    .container{width:min(960px,92vw);margin:0 auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid #e5eaf0}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
+    .brand{font-weight:900;letter-spacing:.3px}
+    .badge{font-weight:800;color:var(--accent);border:1px solid #dbe4ed;border-radius:999px;padding:.35rem .65rem;background:#fff}
+
+    /* Hero (mobile-first: single column) */
+    .hero{display:grid;gap:1rem;padding:1.25rem 0}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem}
+    h1{font-size:1.75rem;margin:.25rem 0}
+    .tagline{color:var(--muted);margin:.2rem 0 1rem}
+
+    /* Buttons: full-width on mobile */
+    .cta-row{display:grid;grid-template-columns:1fr;gap:.6rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.1rem;border-radius:12px;font-weight:900}
+    .btn-primary{background:var(--accent);color:var(--accent-ink)}
+    .btn-outline{background:#fff;border:1px solid #d9e1ea;color:var(--accent)}
+    .btn-warm{background:var(--highlight);color:#2b1d02}
+
+    /* Prices */
+    .price-grid{display:grid;grid-template-columns:1fr;gap:.6rem}
+    .price{border:1px dashed #dfe6ee;border-radius:14px;padding:.85rem 1rem;display:flex;justify-content:space-between;align-items:center}
+    .price h3{margin:0;font-size:1rem;font-weight:800}
+    .amt{color:var(--accent);font-weight:900}
+
+    .deal{margin-top:.7rem;display:inline-block;background:#fff4df;border:1px solid #f2d6a5;padding:.55rem .8rem;border-radius:999px;font-weight:900}
+
+    /* Sections */
+    section h2{margin:.2rem 0 .6rem}
+    ul{margin:.2rem 0 0 1rem;color:var(--muted)}
+    li{margin:.25rem 0}
+
+    /* Embed container (Calendly) */
+    .embed-card{padding:0;overflow:hidden}
+    .embed-card h2{padding:1rem 1rem 0}
+    .cal-wrap{padding:0 0 1rem}
+    .calendly-inline-widget{width:100%; height: 980px;} /* good default for phones */
+
+    /* Sticky bottom actions on mobile */
+    .stickybar{
+      position:sticky;bottom:0;z-index:30;background:#fff;border-top:1px solid #e9eef4;
+      padding:.6rem .6rem env(safe-area-inset-bottom,.6rem);
+      box-shadow:0 -6px 20px rgba(0,0,0,.06);
+    }
+    .sticky-actions{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+    .sticky-actions a{display:flex;align-items:center;justify-content:center;padding:.9rem;border-radius:12px;font-weight:900}
+    .sticky-book{background:var(--highlight);color:#2b1d02}
+    .sticky-call{background:var(--accent);color:#fff}
+
+    /* Desktop enhancements */
+    @media (min-width: 880px){
+      .hero{grid-template-columns:1.1fr .9fr;gap:1.25rem;padding:2rem 0}
+      h1{font-size:2.4rem}
+      .cta-row{grid-template-columns:repeat(3,1fr)}
+      .price-grid{grid-template-columns:repeat(3,1fr)}
+      .calendly-inline-widget{height:900px}
+      .stickybar{display:none}
+    }
   </style>
 </head>
 <body>
@@ -42,55 +88,69 @@
 
   <main class="container">
     <section class="hero">
+      <!-- Left: copy + actions -->
       <div>
         <h1>Dryer Vent Cleaning</h1>
         <p class="tagline">Protecting Homes, One Vent at a Time.</p>
+
         <div class="cta-row">
-          <a class="btn callbtn" href="tel:+13097124829">Call 309-712-4829</a>
-          <a class="btn textbtn" href="sms:+13097124829">Text Us</a>
-          <a class="btn bookbtn" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kyle-pavlik/30min'}); return false;">Book Now</a>
+          <a class="btn btn-primary" href="tel:+13097124829">Call 309-712-4829</a>
+          <a class="btn btn-outline" href="sms:+13097124829">Text Us</a>
+          <a class="btn btn-warm" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kyle-pavlik/30min'}); return false;">Book Now</a>
+        </div>
+
+        <div class="card" style="margin-top:.9rem">
+          <div class="price-grid">
+            <div class="price"><h3>Wall Vent</h3><strong class="amt">$80</strong></div>
+            <div class="price"><h3>Roof Vent</h3><strong class="amt">$120</strong></div>
+            <div class="price"><h3>Transition Piece</h3><strong class="amt">$45</strong></div>
+          </div>
+          <span class="deal">Military & First Responder 10% OFF</span>
         </div>
       </div>
-      <div class="card">
-        <div class="price-grid">
-          <div class="price"><h3>Wall Vent <span class="amt">$80</span></h3></div>
-          <div class="price"><h3>Roof Vent <span class="amt">$120</span></h3></div>
-          <div class="price"><h3>Transition Piece <span class="amt">$45</span></h3></div>
+
+      <!-- Right: embedded booking -->
+      <div class="card embed-card">
+        <h2 style="padding:1rem 1rem 0;margin:0">Book online</h2>
+        <div class="cal-wrap">
+          <div class="calendly-inline-widget" data-url="https://calendly.com/kyle-pavlik/30min"></div>
         </div>
-        <div class="deal">Military & First Responder 10% OFF</div>
       </div>
     </section>
 
-    <section class="card" style="margin-top:.5rem">
-      <h2>Book Online</h2>
-      <div class="calendly-inline-widget" data-url="https://calendly.com/kyle-pavlik/30min" style="min-width:320px;height:700px;"></div>
+    <section class="card" aria-labelledby="why">
+      <h2 id="why">Why clean your vent?</h2>
+      <ul>
+        <li>Faster dry times.</li>
+        <li>Fire risk reduced.</li>
+        <li>Improves energy efficiency.</li>
+        <li>Semi-rigid metal transitions — no vinyl.</li>
+      </ul>
     </section>
 
-    <section style="margin-top:1rem">
-      <div class="card">
-        <h2>Why clean your vent?</h2>
-        <ul>
-          <li>Faster dry times.</li>
-          <li>Fire risk reduced.</li>
-          <li>Improves energy efficiency.</li>
-          <li>Semi-rigid metal transitions — no vinyl.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section style="margin-top:1rem">
-      <div class="card">
-        <h2>Service areas</h2>
-        <p>Yukon • Mustang • SW OKC</p>
-      </div>
+    <section class="card" aria-labelledby="areas" style="margin-top:.8rem">
+      <h2 id="areas">Service areas</h2>
+      <p>Yukon • Mustang • SW OKC</p>
     </section>
   </main>
 
-  <footer>
+  <!-- Mobile sticky action bar -->
+  <div class="stickybar">
+    <div class="container">
+      <div class="sticky-actions">
+        <a class="sticky-book" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kyle-pavlik/30min'}); return false;">Book Now</a>
+        <a class="sticky-call" href="tel:+13097124829">Call</a>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align:center;color:var(--muted);margin:1.5rem 0 2.5rem">
     © <span id="yr"></span> Pavlik Ventcare • Veteran Owned • Yukon • Mustang • SW OKC
   </footer>
 
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
